@@ -24,9 +24,9 @@ class Controller
 		@view.input_url_prompt
 
 		url = @view.get_url
-		paragraph = Parser.new(url) #or Nokogiri ... or whatever its called
+		# paragraph = Parser.new(url) #or Nokogiri ... or whatever its called
 
-
+		paragraph = "Oscar Pistorius, the disabled track star who once commanded stellar heights of international competition at the Paralympic and Olympic Games, was found guilty on Friday of culpable homicide, equivalent to manslaughter, after being acquitted of murder charges for killing his girlfriend."
 		@view.nice_choice
 		@view.select_words_prompt
 
