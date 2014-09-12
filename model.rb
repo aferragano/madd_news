@@ -3,15 +3,6 @@ BUTT  = ["booty", "ass", "arse", "bum", "keister", "tooshie"]
 
 class Model
 
-	# def initialize
-
-	# 	@words = []
-	# 	@url = 
-
-
-
-	# end
-
 	def words_to_implement(word_selection)
 
 		case word_selection
@@ -31,15 +22,16 @@ class Model
 	end
 
 	def make_madd_news(paragraph, words_to_use)
-		paragraph = paragraph.gsub(",", " ,").split(" ")
-		
+		paragraph = paragraph[6]
 	 	paragraph.each_with_index do |string, index|
 	    if string.match(/\A[A-Z]+/)
-	      paragraph[index] <<  " " + words_to_use.sample
+	      string.split
+	      string[index] <<  " " + words_to_use.sample
 	    end
-	    
+	    paragraph
 	  end
-	  paragraph.join(' ').gsub(" ,", ",")
+	  paragraph
+	  # string = paragraph.join(" ").gsub(" ,", ",")
 	end
 
 
