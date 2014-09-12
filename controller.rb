@@ -1,6 +1,7 @@
 require_relative 'view.rb'
 require_relative 'model.rb'
 require_relative 'parser.rb'
+require 'pry'
 
 
 class Controller
@@ -10,37 +11,55 @@ class Controller
 	def initialize
 		@view = View.new
 		@model = Model.new
-		# @url = ""
-		#@user = ''
+		@user_name = ""
+		@url = ""
+		@topic = ""
+		@parsed_article = ""
+		@converted_article = ""
+		@paragraph = ""
 		run_game
+	end
 
+	def input_url
+		@url = @view.input_url_prompt
+	end
+
+	def get_username
+		@user_name = @view.prompt_user_name
+	end
+
+	def pick_topic
+		selection = @view.topics_menu
+		@model.words_to_implement(selection	)
+	end
+
+	def parse_article(url)
+		@parsed_article = Scraper.new(url).return_content
+		# binding.pry
+	end
+
+	def convert_article(parsed_art)
+		@converted_article = @model.convert_string(parsed_art)
 	end
 
 	def run_game
 		@view.welcome
-		user_name = @view.prompt_user_name
-		#User.new(user_name)
-
-		@view.input_url_prompt
-
-		url = @view.get_url
-		paragraphs = Scraper.new(url).return_content #or Nokogiri ... or whatever its called
-
-		# paragraph = "Oscar Pistorius, the disabled track star who once commanded stellar heights of international competition at the Paralympic and Olympic Games, was found guilty on Friday of culpable homicide, equivalent to manslaughter, after being acquitted of murder charges for killing his girlfriend."
-		@view.nice_choice
-		@view.select_words_prompt
-
-		word_selection = @view.display_word_options
-		words_to_use = @model.words_to_implement(word_selection)
-		#in models use case statement to use 1., 2., or 3., to identify which to implement
-
-		madd_news = @model.convert_string(paragraphs[0], words_to_use)
-		@view.display_madd_news(madd_news)
-
-		@view.thank_user_prompt(user_name)
-
-
+		get_username
+		input_url
+		pick_topic
+		parse_article(@url)
+		convert_article(@parsed_article)
+		puts "we are here"
+		p @converted_article
 	end
 
 end
 my_game = Controller.new
+
+
+
+
+
+
+
+
