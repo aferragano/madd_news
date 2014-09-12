@@ -7,13 +7,19 @@ news = string.gsub(",", " ,").split
 butt = ["booty", "ass", "arse", "bum", "keister", "tooshie", "badonkadonk", "fanny", "money-maker"]
 marijuana = ["pot", "weed", "ganja", "homegrown", "laughing grass", "Mary Jane", "Texas tea"]
 miscellaneous = ["blunderbuss", "bowyang", "cockamamie", "eructation", "fard", "fartlek", "widdershins", "smellfungus", "wabbit"]
+drunk = ["shitfaced", "blitzed", "blotto", "pissed", "sauced", "slagged", "trashed"]
+yiddish = ["bopkis", "huppitzville", "farbisene", "farkakt", "kakameyne", "klots", "shlemiel"]
+
 def bootify(string_array, word_array)
- string_array.each_with_index do |string, index|
+  completed_array = string_array.dup
+  counter = 0
+  string_array.each_with_index do |string, index|
     if string.match(/\A[A-Z]+/)
-      string_array[index] << " " + word_array.sample
+      completed_array.insert(index + counter, word_array.sample)
+      counter += 1
     end
   end
-  string = string_array.join(" ").gsub(" ,", ",")
+  completed_array.join(" ").gsub(" ,", ",")
 end
 
-p bootify(news, miscellaneous)
+p bootify(news, butt)
