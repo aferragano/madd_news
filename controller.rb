@@ -12,6 +12,7 @@ class Controller
 		@model = Model.new
 		# @url = ""
 		#@user = ''
+		run_game
 
 	end
 
@@ -29,7 +30,7 @@ class Controller
 		@view.nice_choice
 		@view.select_words_prompt
 
-		word_selection = display_word_options
+		word_selection = @view.display_word_options
 		words_to_use = @model.words_to_implement(word_selection)
 		#in models use case statement to use 1., 2., or 3., to identify which to implement
 
@@ -42,3 +43,4 @@ class Controller
 	end
 
 end
+my_game = Controller.new
