@@ -34,7 +34,7 @@ class Controller
 		words_to_use = @model.words_to_implement(word_selection)
 		#in models use case statement to use 1., 2., or 3., to identify which to implement
 
-		madd_news = @model.make_madd_news(paragraphs, words_to_use)
+		madd_news = @model.convert_string(paragraphs[0], words_to_use)
 		@view.display_madd_news(madd_news)
 
 		@view.thank_user_prompt(user_name)

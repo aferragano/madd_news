@@ -6,10 +6,6 @@
 
 class View
 
-	# def initialize
-
-	# end
-
 	def welcome
 		puts "_" * 60
 		puts "\n" * 10
@@ -50,9 +46,13 @@ class View
 
 	def display_word_options
 		puts 
-		puts "\t 1. #lala"
-		puts "\t 2. lala"
-		puts "\t 3. #lala"
+		puts "\t 1. BUTT"
+		puts "\t 2. MARIJUANA"
+		puts "\t 3. MISC"
+		puts "\t 4. DRUNK"
+		puts "\t 5. YIDDISH"
+
+		puts
 		puts
 		gets.chomp
 	end
