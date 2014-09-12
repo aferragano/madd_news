@@ -5,7 +5,8 @@ string = "Oscar Pistorius, the disabled track star who once commanded stellar he
 news = string.gsub(",", " ,").split
 
 butt = ["booty", "ass", "arse", "bum", "keister", "tooshie", "badonkadonk", "fanny", "money-maker"]
-
+marijuana = ["pot", "weed", "ganja", "homegrown", "laughing grass", "Mary Jane", "Texas tea"]
+miscellaneous = ["blunderbuss", "bowyang", "cockamamie", "eructation", "fard", "fartlek", "widdershins", "smellfungus", "wabbit"]
 def bootify(string_array, word_array)
  string_array.each_with_index do |string, index|
     if string.match(/\A[A-Z]+/)
@@ -15,4 +16,4 @@ def bootify(string_array, word_array)
   string = string_array.join(" ").gsub(" ,", ",")
 end
 
-p bootify(news, butt)
+p bootify(news, miscellaneous)
