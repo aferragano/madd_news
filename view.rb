@@ -1,19 +1,15 @@
-require_relative 'model.rb'
-require_relative 'parser.rb'
+# require_relative 'model.rb'
+# require_relative 'parser.rb'
 
 #CONSTANT WORDS ARRAY...
 # WORDS1 = w%[lala, lalala, la]
 
 class View
 
-	# def initialize
-
-	# end
-
 	def welcome
 		puts "_" * 60
-		puts "\n" * 10
-		puts "\tWelcome to Madd News!"
+		puts "\n" * 5
+		ascii
 		puts "\n" * 5
 	end
 
@@ -26,33 +22,28 @@ class View
 	end
 
 	def input_url_prompt
-		puts 
+		puts
 		puts "\t Copy & Paste your selected news article URL"
 		puts "_" * 60
 		puts
-	end
-
-	def get_url
 		gets.chomp
 	end
 
-	def nice_choice
+	def select_topic_prompt
 		puts 
-		puts "\t Nice choice"
+		puts "\t Please select a topic:"
 		puts
 	end
 
-	def select_words_prompt
+	def topics_menu
+		puts "pick a number:"
 		puts 
-		puts "\t Please identify which words you wish to implement in your news article:"
+		puts "\t 1. BUTT"
+		puts "\t 2. MARIJUANA"
+		puts "\t 3. MISC"
+		puts "\t 4. DRUNK"
+		puts "\t 5. YIDDISH"
 		puts
-	end
-
-	def display_word_options
-		puts 
-		puts "\t 1. #lala"
-		puts "\t 2. lala"
-		puts "\t 3. #lala"
 		puts
 		gets.chomp
 	end
@@ -68,18 +59,36 @@ class View
 	end
 
 
-	def thank_user_prompt(user_name)
+	def thank_you_message(user_name)
 		puts
 		puts "\n\tThanks you #{user_name} for using MADD NEWS!\n\n We hope you enjoyed your MADD NEWS article."
 		puts
 	end
 
+	def ascii
+		puts
+		puts "          _____                    _____                    _____                            _____                    _____                    _____                    _____          "
+		puts "         /\\    \\                  /\\    \\                  /\\    \\                          /\\    \\                  /\\    \\                  /\\    \\                  /\\    \\         "
+		puts "        /::\\____\\                /::\\    \\                /::\\    \\                        /::\\____\\                /::\\    \\                /::\\____\\                /::\\    \\        "
+		puts "       /::::|   |               /::::\\    \\              /::::\\    \\                      /::::|   |               /::::\\    \\              /:::/    /               /::::\\    \\       "
+		puts "      /:::::|   |              /::::::\\    \\            /::::::\\    \\                    /:::::|   |              /::::::\\    \\            /:::/   _/___            /::::::\\    \\
+"
+		puts "     /::::::|   |             /:::/\\:::\\    \\          /:::/\\:::\\    \\                  /::::::|   |             /:::/\\:::\\    \\          /:::/   /\\    \\          /:::/\\:::\\    \\     "
+		puts "    /:::/|::|   |            /:::/__\\:::\\    \\        /:::/  \\:::\\    \\                /:::/|::|   |            /:::/__\\:::\\    \\        /:::/   /::\\____\\        /:::/__\\:::\\    \\    "
+		puts "   /:::/ |::|   |           /::::\\   \\:::\\    \\      /:::/    \\:::\\    \\              /:::/ |::|   |           /::::\\   \\:::\\    \\      /:::/   /:::/    /        \\:::\\   \\:::\\    \\   "
+		puts "  /:::/  |::|___|______    /::::::\\   \\:::\\    \\    /:::/    / \\:::\\    \\            /:::/  |::|   | _____    /::::::\\   \\:::\\    \\    /:::/   /:::/   _/___    ___\\:::\\   \\:::\\    \\  "
+		puts " /:::/   |::::::::\\    \\  /:::/\\:::\\   \\:::\\    \\  /:::/    /   \\:::\\ ___\\          /:::/   |::|   |/\\    \\  /:::/\\:::\\   \\:::\\    \\  /:::/___/:::/   /\\    \\  /\\   \\:::\\   \\:::\\    \\ "
+		puts "/:::/    |:::::::::\\____\\/:::/  \\:::\\   \\:::\\____\\/:::/____/     \\:::|    |        /:: /    |::|   /::\\____\\/:::/__\\:::\\   \\:::\\____\\|:::|   /:::/   /::\\____\\/::\\   \\:::\\   \\:::\\____\\"
+		puts "\\::/    / ~~~~~/:::/    /\\::/    \\:::\\  /:::/    /\\:::\\    \\     /:::|____|        \\::/    /|::|  /:::/    /\\:::\\   \\:::\\   \\::/    /|:::|__/:::/   /:::/    /\\:::\\   \\:::\\   \\::/    /"
+		puts " \\/____/      /:::/    /  \\/____/ \\:::\\/:::/    /  \\:::\\    \\   /:::/    /          \\/____/ |::| /:::/    /  \\:::\\   \\:::\\   \\/____/  \\:::\\/:::/   /:::/    /  \\:::\\   \\:::\\   \\/____/ "
+		puts "             /:::/    /            \\::::::/    /    \\:::\\    \\ /:::/    /                   |::|/:::/    /    \\:::\\   \\:::\\    \\       \\::::::/   /:::/    /    \\:::\\   \\:::\\    \\     "
+		puts "            /:::/    /              \\::::/    /      \\:::\\    /:::/    /                    |::::::/    /      \\:::\\   \\:::\\____\\       \\::::/___/:::/    /      \\:::\\   \\:::\\____\\    "
+		puts "           /:::/    /               /:::/    /        \\:::\\  /:::/    /                     |:::::/    /        \\:::\\   \\::/    /        \\:::\\__/:::/    /        \\:::\\  /:::/    /    "
+		puts "          /:::/    /               /:::/    /          \\:::\\/:::/    /                      |::::/    /          \\:::\\   \\/____/          \\::::::::/    /          \\:::\\/:::/    /     "
+		puts "         /:::/    /               /:::/    /            \\::::::/    /                       /:::/    /            \\:::\\    \\               \\::::::/    /            \\::::::/    /      "
+		puts "        /:::/    /               /:::/    /              \\::::/    /                       /:::/    /              \\:::\\____\\               \\::::/    /              \\::::/    /       "
+		puts "        \\::/    /                \\::/    /                \\::/____/                        \\::/    /                \\::/    /                \\::/____/                \\::/    /        "
+		puts "         \\/____/                  \\/____/                  ~~                               \\/____/                  \\/____/                  ~~                       \\/____/         "
+		puts
+	end
 end
-
-
-
-
-
-
-
-
