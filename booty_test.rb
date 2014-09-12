@@ -4,7 +4,7 @@ string = "Oscar Pistorius, the disabled track star who once commanded stellar he
 
 news = string.gsub(",", " ,").split
 
-butt = ["booty", "ass", "arse", "bum", "keister", "tooshie"]
+butt = ["booty", "ass", "arse", "bum", "keister", "tooshie", "badonkadonk", "fanny", "money-maker"]
 
 def bootify(string_array, word_array)
  string_array.each_with_index do |string, index|
